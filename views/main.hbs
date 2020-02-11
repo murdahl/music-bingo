@@ -1,0 +1,22 @@
+<div>
+  <h1>MusicBingo</h1>
+  <form method="POST" action="/">
+    <label for="bearer">Bearer: </label>
+    <input type="text" id="bearer" value="{{bearerToken}}" />
+    <button name="submit" class="button small" value="value" type="submit" tabindex="7">Hent bilder</button>
+    <a href="/" class="button-cancel small"> Cancel </a>
+
+  </form>
+  <table>
+    <thead>
+      <th>Who might this be?</th>
+    </thead>
+    <tr>
+      {{#each artistUrls}}
+      <td>
+        <img class="artist" src="{{this}}">
+      </td>
+      {{/each}}
+    </tr>
+  </table>
+</div>
