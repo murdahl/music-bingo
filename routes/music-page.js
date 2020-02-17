@@ -1,8 +1,6 @@
-// NOT IN USE
-
 var express = require("express");
 var router = express.Router();
-
+var fetchArtists = require("../lib/fetchArtists");
 router.get("/", (req, res) => {
   var artistUrls = [
     "https://e.snmc.io/i/150/w/ed9c8f3f7ac4a4dbbc0364a4b25fb0e4/5196436",
@@ -17,17 +15,19 @@ router.get("/", (req, res) => {
 
 router.get("/bearer/:bearer", async (req, res, next) => {
   // Get 25 music names and imgurls
-  var bearer = req.params.bearer;
-  console.log(bearer);
-  // Fetch artisttable
+  var bearerToken = req.params.bearer;
 
-  res.render("main", { layout: "index", artistTable });
+  // Fetch artisttable
+  var artists = await fetchArtists(bearerToken);
+  console.log(artists);
+  var artistTable;
+  res.render("main", { layout: "index", artistTable, bearerToken });
 });
 
-router.post("/:bearer", async (req, res, next) => {
+router.post("/", async (req, res, next) => {
   // Get 25 music names and imgurls
   var bearer = req.body.bearer;
-  return res.redirect("/" + bearer);
+  return res.redirect("/bearer/" + bearer);
 });
 
 module.exports = router;
