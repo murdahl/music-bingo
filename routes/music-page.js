@@ -30,4 +30,9 @@ router.post("/", async (req, res, next) => {
   return res.redirect("/bearer/" + bearer);
 });
 
+router.post('/', async (req, res, next) => {
+	// Get 25 music names and imgurls
+	res.render('main', {});
+});
+
 module.exports = router;
