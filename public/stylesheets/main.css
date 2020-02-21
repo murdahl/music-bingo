@@ -1,0 +1,27 @@
+body {
+	background-color: white;
+}
+
+img.artist {
+	width: 200px; /* width of container */
+	height: 200px; /* height of container */
+	overflow: hidden;
+	align-self: center;
+}
+div.underline {
+	background-color: whitesmoke;
+}
+div.guess {
+	font-weight: bold;
+}
+
+span.artid {
+	color: gray;
+}
+
+table {
+	border: 4px solid black;
+}
+td {
+	border: 2px solid black;
+}

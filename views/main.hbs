@@ -1,22 +1,65 @@
 <div>
   <h1>MusicBingo</h1>
-  <form method="POST" action="/">
+  <form method="GET" action="/">
     <label for="bearer">Bearer: </label>
-    <input type="text" id="bearer" value="{{bearerToken}}" />
-    <button name="submit" class="button small" value="value" type="submit" tabindex="7">Hent bilder</button>
+    <input data-attr-input="bearer" type="text" id="bearer" value="{{bearerToken}}" />
+
+    <label for="playlistid">Spotify Playlist Id: </label>
+    <input data-attr-input="playlistid" type="text" id="playlistid" value="{{playlistid}}" />
+
+    <button name="submit" id="updateButton" class="button small" value="value" data-func="get-pictures"
+      data-attr-button-for-fetch="fetchbutton" type="submit">
+      Get pictures
+    </button>
     <a href="/" class="button-cancel small"> Cancel </a>
 
   </form>
+  {{#if artistTables}}
   <table>
     <thead>
       <th>Who might this be?</th>
     </thead>
+    {{#each artistTables}}
     <tr>
-      {{#each artistUrls}}
+      {{#each this}}
       <td>
-        <img class="artist" src="{{this}}">
+        <img class="artist" src="{{images.0.url}}">
+        <div class="underline">
+          <div class="guess">
+            <span>Artist:</span>
+            <br />
+            <br />
+            <span>Sang:</span>
+          </div>
+          <br />
+          <span class="artid">id: {{id}}</span>
+        </div>
       </td>
       {{/each}}
     </tr>
+    {{/each}}
   </table>
+  {{/if}}
+
 </div>
+
+{{!-- <script>
+  $$('[data-func="get-pictures"]').forEach(function (button) {
+    button.addEventListener('click', function (e) {
+      var driverId = e.target.getAttribute("data-attr-button-for-fetch");
+      var nodeList = document.querySelectorAll("[data-attr-driver-id='" + driverId + "']");
+      var data = { "id": driverId };
+      nodeList.forEach(function (d) {
+        data[d.getAttribute("name")] = d.value;
+      });
+
+      ajax("/", data, result => {
+        let res = JSON.parse(result);
+        if (!res.success) {
+          alert("Holy fuckballs... Something wrong happened and I do NOT know what!");
+        }
+      };
+    }
+  }
+
+</script> --}}
