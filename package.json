@@ -8,7 +8,8 @@
 		"express": "^4.17.1",
 		"express-handlebars": "^3.1.0",
 		"handlebars": "^4.7.3",
-		"prettifier": "^0.4.0"
+		"prettifier": "^0.4.0",
+		"spotify-web-api-node": "^4.0.0"
 	},
 	"devDependencies": {
 		"eslint": "^6.8.0",
