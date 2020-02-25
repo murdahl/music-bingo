@@ -1,13 +1,9 @@
 <div>
 	<h1>MusicBingo</h1>
-	<form method="GET" action="/">
-		<button onclick="window.location.href = '/';">Refresh</button>
-	</form>
+	<button onclick="window.location.href = '/';">Refresh</button
+	><span>Who might this be?</span>
 	{{#if artistTables}}
 	<table>
-		<thead>
-			<th>Who might this be?</th>
-		</thead>
 		{{#each artistTables}}
 		<tr>
 			{{#each this}}
@@ -15,13 +11,11 @@
 				<img class="artist" src="{{images.0.url}}" />
 				<div class="underline">
 					<div class="guess">
-						<span>Artist:</span>
+						<span>Artist / Sang:</span>
 						<br />
 						<br />
-						<span>Sang:</span>
 					</div>
-					<br />
-					<span class="artid">id: {{ id }}</span>
+					<span class="artid">{{ id }}</span>
 				</div>
 			</td>
 			{{/each}}

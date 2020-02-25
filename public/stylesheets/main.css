@@ -4,9 +4,8 @@ body {
 
 img.artist {
 	width: 100%; /* width of container */
-	height: 230px; /* height of container */
+	height: 200px; /* height of container */
 	overflow: hidden;
-	margin: auto;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
@@ -20,14 +19,15 @@ div.guess {
 
 span.artid {
 	color: gray;
+	font-size: small;
 }
 
 table {
-	border: 4px solid black;
+	border: 3px solid black;
 }
 td {
-	width: 240px;
-	border: 2px solid black;
+	width: 210px;
+	border: 1px solid black;
 }
 
 /* print styles */
@@ -40,11 +40,26 @@ td {
 	iframe,
 	.menu,
 	.hero,
-	.adslot {
+	.adslot,
+	button,
+	h1 {
 		display: none;
 	}
 	body {
 		margin: 0;
 		background-color: #fff;
+		font-size: small;
+	}
+	span.artid {
+		color: darkgray;
+		font-size: xx-small;
+	}
+	img.artist {
+		width: 100%; /* width of container */
+		height: 150px; /* height of container */
+		overflow: hidden;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
 	}
 }
