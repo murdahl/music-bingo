@@ -2,6 +2,12 @@
 	<h1>MusicBingo</h1>
 	<button onclick="window.location.href = '/';">Refresh</button
 	><span>Who might this be?</span>
+	<form action="/playlist" method="post">
+		<label for="playlist">Your spotify playlist link: </label>
+		<input type="text" id="playlist" name="playlist" />
+		<input type="submit" value="Make" />
+		<label> Remember, only public playlists</label>
+	</form>
 	{{#if artistTables}}
 	<table>
 		{{#each artistTables}}
@@ -11,7 +17,7 @@
 				<img class="artist" src="{{images.0.url}}" />
 				<div class="underline">
 					<div class="guess">
-						<span>Artist / Sang:</span>
+						<span>Artist / Song:</span>
 						<br />
 						<br />
 					</div>

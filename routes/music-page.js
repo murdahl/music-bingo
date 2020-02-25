@@ -15,4 +15,22 @@ router.get('/', async (req, res, next) => {
 	res.render('main', { layout: 'index', artistTables });
 });
 
+router.post('/playlist', async (req, res, next) => {
+	// Get 25 music names and imgurls
+
+	var playliststring = req.body.playlist;
+	console.log(playliststring);
+
+	// Fetch artisttable
+	var artists = await spotifyApi.getSporifyArtistList(playliststring);
+
+	//Scramble 25 tables and return
+	var artistTables = fetchArtists.pickNRandomizedList(artists, 25);
+
+	res.render('main', {
+		layout: 'index',
+		artistTables
+	});
+});
+
 module.exports = router;
