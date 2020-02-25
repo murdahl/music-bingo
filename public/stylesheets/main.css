@@ -1,5 +1,5 @@
 body {
-	background-color: white;
+	background-color: beige;
 }
 
 img.artist {
@@ -25,4 +25,23 @@ table {
 td {
 	width: 240px;
 	border: 2px solid black;
+}
+
+/* print styles */
+@media print {
+	header,
+	footer,
+	aside,
+	nav,
+	form,
+	iframe,
+	.menu,
+	.hero,
+	.adslot {
+		display: none;
+	}
+	body {
+		margin: 0;
+		background-color: #fff;
+	}
 }
