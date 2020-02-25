@@ -7,6 +7,9 @@ img.artist {
 	height: 230px; /* height of container */
 	overflow: hidden;
 	margin: auto;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
 }
 div.underline {
 	background-color: whitesmoke;
