@@ -1,12 +1,14 @@
 <div>
 	<h1>MusicBingo</h1>
-	<button onclick="window.location.href = '/';">Refresh</button
-	><span>Who might this be?</span>
+	{{!-- <button onclick="window.location.href = '/';">Refresh</button> --}}
+	<span>Who might this be?</span>
 	<form action="/playlist" method="post">
 		<label for="playlist">Your spotify playlist link: </label>
-		<input type="text" id="playlist" name="playlist" />
-		<input type="submit" value="Make" />
+		<input type="text" id="playlist" name="playlist" /> </br>
+		<label for="include-artist-name">Include artist name: </label>
+		<input type="checkbox" id="include-artist-name" /></br>
 		<label> Remember, only public playlists</label>
+		<input type="submit" value="Make" />
 	</form>
 	{{#if artistTables}}
 	<table>
